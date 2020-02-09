@@ -116,7 +116,7 @@ System Exclusive (SysEx) messages are used to send device specific
 data. The ``data`` attribute is a tuple of data bytes which serves as
 the payload of the message::
 
-    >>> msg = Message('sysex', data=[1, 2, 3])
+    >>> msg = mido.Message('sysex', data=[1, 2, 3])
     >>> msg
     <message sysex data=(1, 2, 3) time=0>
     >>> msg.hex()
@@ -124,7 +124,7 @@ the payload of the message::
 
 You can also extend the existing data::
 
-   >>> msg = Message('sysex', data=[1, 2, 3])
+   >>> msg = mido.Message('sysex', data=[1, 2, 3])
    >>> msg.data += [4, 5]
    >>> msg.data += [6, 7, 8]
    >>> msg
@@ -142,7 +142,7 @@ applied to each data byte. These are all valid::
 
 For example::
 
-    >>> msg = Message('sysex', data=bytearray(b'ABC'))
+    >>> msg = mido.Message('sysex', data=bytearray(b'ABC'))
     >>> msg.data += bytearray(b'DEF')
     >>> msg
     <message sysex data=(65, 66, 67, 68, 69, 70) time=0>
